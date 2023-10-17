@@ -11,8 +11,8 @@
 
  ## Project structure:-
 
- 
- ### ipl-project1
+
+### ipl-project1
 
 * [data/](./ipl-project1/data)
   * [.~lock.deliveries.csv#](./ipl-project1/data/.~lock.deliveries.csv#)
@@ -26,8 +26,20 @@
   * [Main.java](./ipl-project1/menu/Main.java)
 * [stats/](./ipl-project1/stats)
   * [batsman/](./ipl-project1/stats/batsman)
+    * [FindPlayerMostSixes.java](./ipl-project1/stats/batsman/FindPlayerMostSixes.java)
+    * [HighestParternship.java](./ipl-project1/stats/batsman/HighestParternship.java)
+    * [MostDucks.java](./ipl-project1/stats/batsman/MostDucks.java)
+    * [NoOfFours.java](./ipl-project1/stats/batsman/NoOfFours.java)
+    * [StrikeRate.java](./ipl-project1/stats/batsman/StrikeRate.java)
   * [bowling/](./ipl-project1/stats/bowling)
+    * [MostThreeWickets.java](./ipl-project1/stats/bowling/MostThreeWickets.java)
+    * [TopEconomicalBowlers.java](./ipl-project1/stats/bowling/TopEconomicalBowlers.java)
   * [team/](./ipl-project1/stats/team)
+    * [ExtraRunConcededPerTeam.java](./ipl-project1/stats/team/ExtraRunConcededPerTeam.java)
+    * [MostCatches.java](./ipl-project1/stats/team/MostCatches.java)
+    * [NoOfMatchesPlayed.java](./ipl-project1/stats/team/NoOfMatchesPlayed.java)
+    * [NoOfMatchesWon.java](./ipl-project1/stats/team/NoOfMatchesWon.java)
+    * [TossWon.java](./ipl-project1/stats/team/TossWon.java)
 * [utility_classes/](./ipl-project1/utility_classes)
   * [Pair.java](./ipl-project1/utility_classes/Pair.java)
   * [Pair2.java](./ipl-project1/utility_classes/Pair2.java)
