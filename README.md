@@ -10,18 +10,18 @@
 - I have used the coding standard and all oops methods to design my project structure. <br>
 
  ## Project structure;-
- - data :- contains two csv files
-              - matches.csv
-              - deliveries.csv
- - menu :- entry point
-              - Main.java :- Main/Entry file
-              - Batsman.java :- for calling batsman stats
-              - Bowler.java  :- for calling bowler stats
-              - Fielder.java :- for calling fielder/team stats
- - stats :- all stats related classes
-              - batsman :- all batsmans stats related classes
-              - bowling :- all bowlers stats related classes
-              - team    :- all team/fielders stats related classes
+ - data :- contains two csv files <br>
+              - matches.csv <br>
+              - deliveries.csv <br>
+ - menu :- entry point <br>
+              - Main.java :- Main/Entry file <br>
+              - Batsman.java :- for calling batsman stats <br>
+              - Bowler.java  :- for calling bowler stats <br>
+              - Fielder.java :- for calling fielder/team stats <br>
+ - stats :- all stats related classes <br>
+              - batsman :- all batsmans stats related classes <br>
+              - bowling :- all bowlers stats related classes <br>
+              - team    :- all team/fielders stats related classes <br>
 
 
 **If you have any suggestion regarding my project email:- vdas53073@gmail.com.**
