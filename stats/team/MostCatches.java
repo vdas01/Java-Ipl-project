@@ -1,4 +1,4 @@
-package Team;
+package team;
 
 
 //Q) Most catches by a player in a year

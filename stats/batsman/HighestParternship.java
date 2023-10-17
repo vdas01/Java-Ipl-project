@@ -1,4 +1,4 @@
-package Batsman;
+package batsman;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -8,28 +8,29 @@ import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-class Pair implements Comparable<Pair> {
+class Pair2 implements Comparable<Pair2> {
     int priority;
     String value;
 
-    Pair(int priority, String value) {
+    Pair2(int priority, String value) {
         this.priority = priority;
         this.value = value;
     }
 
     @Override
-    public int compareTo(Pair other) {
+    public int compareTo(Pair2 other) {
         // Compare Pairs based on their priority
         return Integer.compare(this.priority, other.priority);
     }
 }
 
+
 class Partnership{
       Set<String> ids = new HashSet<>();
-      PriorityQueue<Pair> partner = new PriorityQueue<>(Collections.reverseOrder());
-      PriorityQueue<Pair> highPartner = new PriorityQueue<>(Collections.reverseOrder());
-      String deliveryPath = "deliveries.csv";
-      String matchPath = "matches.csv";
+      PriorityQueue<Pair2> partner = new PriorityQueue<>(Collections.reverseOrder());
+      PriorityQueue<Pair2> highPartner = new PriorityQueue<>(Collections.reverseOrder());
+      String deliveryPath = "data/deliveries.csv";
+      String matchPath = "data/matches.csv";
 
       String prevId;
       String batsman1;
@@ -86,7 +87,7 @@ class Partnership{
                         else
                         c2 = true;
 
-                        partner.add(new Pair(runs,batsman1 + " and " + batsman2 + " scored:- "));
+                        partner.add(new Pair2(runs,batsman1 + " and " + batsman2 + " scored:- "));
                         runs = 0;
                     }
                     else{
@@ -112,7 +113,7 @@ class Partnership{
                           String name = partner.peek().value;
                         //   System.out.print(v + " "+ name);
                           partner.clear();
-                          highPartner.add(new Pair(v,name));
+                          highPartner.add(new Pair2(v,name));
 
                           batsman1 = curr_batsman1;
                           batsman2 = curr_batsman2;

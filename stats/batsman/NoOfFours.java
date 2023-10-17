@@ -1,4 +1,4 @@
-package Batsman;
+package batsman;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -9,7 +9,7 @@ import java.util.TreeMap;
 
 public class NoOfFours {
     public static void main(String[] args) {
-        String csvFilePath = "deliveries.csv";
+        String csvFilePath = "data/deliveries.csv";
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
            

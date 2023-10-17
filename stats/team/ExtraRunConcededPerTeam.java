@@ -1,3 +1,4 @@
+package team;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,24 +11,20 @@ import java.util.TreeSet;
 
 public class ExtraRunConcededPerTeam {
     //matchid, year
-    public static Set<String> matchYear(){
-          String matchPath = "matches.csv";
+    public static Set<String> matchYear() {
+          String matchPath = "data/matches.csv";
           Set<String> s1 = new TreeSet<String>();
 
              try (BufferedReader br = new BufferedReader(new FileReader(matchPath))) {
             
             br.readLine();
             String line;
-            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null){
                 String[] columns = line.split(",");
                 // System.out.print(columns[1] + " ");
                if(columns[1].equals("2016")){
                    s1.add(columns[0]);
                }
-            }
-           
-            for(String id: s1){
-                System.out.println(id + " ");
             }
            
         } catch (IOException e) {
@@ -40,11 +37,11 @@ public class ExtraRunConcededPerTeam {
         
 
         //  String matchPath = "matches.csv";
-         String deliveriesPath = "deliveries.csv";
+         String deliveriesPath = "data/deliveries.csv";
 
          Set<String> s2 = matchYear();
 
-        try (BufferedReader br = new BufferedReader(new FileReader(deliveriesPath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(deliveriesPath))){
             // Assuming the first line contains headers, if not, skip this line
             br.readLine();
 
@@ -59,14 +56,11 @@ public class ExtraRunConcededPerTeam {
                 String team = columns[3];
                 int extra_runs = Integer.parseInt(columns[16]);
 
-                if(extra_runs == 1 && s2.contains(id)){
-                    int prev = dataMap.get(team);
-                    dataMap.put(team,prev+1);
+                if(s2.contains(id)){
+                    int prev = dataMap.getOrDefault(team,0);
+                    dataMap.put(team,prev+extra_runs);
                 }
-                else if(!dataMap.containsKey(team) && s2.contains(id)){
-                    dataMap.put(team,0);
-                }
-
+             
             }
   
 
@@ -75,7 +69,7 @@ public class ExtraRunConcededPerTeam {
                 System.out.println(temp.getKey() + " " + temp.getValue());
             }
            
-        } catch (IOException e) {
+        } catch (IOException e){
             e.printStackTrace();
         }
     }

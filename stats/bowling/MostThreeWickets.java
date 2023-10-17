@@ -1,10 +1,8 @@
-package Bowling;
+package bowling;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -29,14 +27,15 @@ class Pair implements Comparable<Pair> {
 }
 
 class Matches {
-   String matchPath = "matches.csv";
+   String matchPath = "data/matches.csv";
     Set<String> matchIds = new HashSet<>();
-    public void getIds(String year){
-        try (BufferedReader br = new BufferedReader(new FileReader(matchPath))) {   
+
+    public void getIds(String year) {
+        try (BufferedReader br = new BufferedReader(new FileReader(matchPath))){   
             br.readLine();
 
             String line;
-            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null){
                 
                 String[] columns = line.split(",");
                 String matchId = columns[0];
@@ -46,26 +45,26 @@ class Matches {
                     matchIds.add(matchId);
                 }
             }
-        } catch (IOException e) {
+        } catch (IOException e){
             e.printStackTrace();
         }
     }
 }
 
 class Deliveries{
-    String deliveryPath = "deliveries.csv";
+    String deliveryPath = "data/deliveries.csv";
     String prevId;
     boolean first = true;
     Map<String,Integer> bowler_wicket = new HashMap<String,Integer>();
     // PriorityQueue<Pair> five_wickets = new PriorityQueue<>();
     Map<String,Integer> threeWickets = new HashMap<>();
 
-    public void allThreeWickets(Set<String>matchIds){
-         try (BufferedReader br = new BufferedReader(new FileReader(deliveryPath))) {   
+    public void allThreeWickets(Set<String>matchIds) {
+         try (BufferedReader br = new BufferedReader(new FileReader(deliveryPath))){   
             br.readLine();
 
             String line;
-            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null){
                 
                 String[] columns = line.split(",");
                 String currId = columns[0];
@@ -110,14 +109,14 @@ class Deliveries{
                 }
                
             }
-        } catch (IOException e) {
+        } catch (IOException e){
             e.printStackTrace();
         }
 
         // System.out.println(threeWickets);
     }
 
-    public void getMostThreeWickets(){
+    public void getMostThreeWickets() {
         PriorityQueue<Pair>  mostThreeWickets = new PriorityQueue<>(Collections.reverseOrder());
 
          for (Map.Entry<String, Integer> entry : threeWickets.entrySet()){
@@ -135,7 +134,7 @@ class Deliveries{
     
 }
 
-public class MostFiveWickets {
+public class MostThreeWickets {
     
 
 

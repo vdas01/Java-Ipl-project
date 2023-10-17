@@ -1,4 +1,4 @@
-package Batsman;
+package batsman;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -31,7 +31,7 @@ public class FindPlayerMostSixes {
 
     public static Set<String> getIds(String year,String venue){
         Set<String> ids = new HashSet<String>();
-         String matchPath = "matches.csv";
+         String matchPath = "data/matches.csv";
 
         try (BufferedReader br = new BufferedReader(new FileReader(matchPath))) {
             br.readLine();
@@ -56,7 +56,7 @@ public class FindPlayerMostSixes {
 
     public static  Map<String,Integer> getBatsman (Set<String>ids){
 
-        String deliveryPath = "deliveries.csv";
+        String deliveryPath = "data/deliveries.csv";
            Map<String,Integer> batsman_run = new TreeMap<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(deliveryPath))) {   
