@@ -33,11 +33,8 @@ public class ExtraRunConcededPerTeam {
         return s1;
     }
 
-    public static void main(String[] args) {
-        
-
-        //  String matchPath = "matches.csv";
-         String deliveriesPath = "data/deliveries.csv";
+    public static void getExtraRunsConceded(){
+            String deliveriesPath = "data/deliveries.csv";
 
          Set<String> s2 = matchYear();
 
@@ -73,4 +70,5 @@ public class ExtraRunConcededPerTeam {
             e.printStackTrace();
         }
     }
+
 }

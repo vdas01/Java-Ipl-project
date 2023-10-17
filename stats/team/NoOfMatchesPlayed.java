@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class NoOfMatchesPlayed {
-    public static void main(String[] args) {
-       
-        String csvFilePath = "data/matches.csv";
+
+    public static void getMatchesPlayed(){
+         String csvFilePath = "data/matches.csv";
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
         
@@ -36,4 +36,5 @@ public class NoOfMatchesPlayed {
             e.printStackTrace();
         }
     }
+  
 }

@@ -8,60 +8,30 @@ import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-class Pair2 implements Comparable<Pair2> {
-    int priority;
-    String value;
-
-    Pair2(int priority, String value) {
-        this.priority = priority;
-        this.value = value;
-    }
-
-    @Override
-    public int compareTo(Pair2 other) {
-        // Compare Pairs based on their priority
-        return Integer.compare(this.priority, other.priority);
-    }
-}
+import utility_classes.Pair;
+import utility_classes.StoredId;
 
 
-class Partnership{
-      Set<String> ids = new HashSet<>();
-      PriorityQueue<Pair2> partner = new PriorityQueue<>(Collections.reverseOrder());
-      PriorityQueue<Pair2> highPartner = new PriorityQueue<>(Collections.reverseOrder());
+
+
+public class HighestParternship{
+      
+    public static void getPartnership(String year, String venue){
+      PriorityQueue<Pair> partner = new PriorityQueue<>(Collections.reverseOrder());
+      PriorityQueue<Pair> highPartner = new PriorityQueue<>(Collections.reverseOrder());
       String deliveryPath = "data/deliveries.csv";
-      String matchPath = "data/matches.csv";
+      Set<String> ids = new HashSet<>();
+     
 
-      String prevId;
-      String batsman1;
-      String batsman2;
+      String prevId = "";
+      String batsman1 = "";
+      String batsman2 = "";
       int runs = 0;
       boolean c1 = false;
       boolean c2 = false;
       boolean first = true;
 
-    public void addId(String year,String venue){
-           try (BufferedReader br = new BufferedReader(new FileReader(matchPath))) {   
-            br.readLine();
-
-            String line;
-            while ((line = br.readLine()) != null) {
-                
-                String[] columns = line.split(",");
-                String matchId = columns[0];
-                String curr_year = columns[1];
-                String curr_venue = columns[2];
-
-                if(curr_year.equals(year) && curr_venue.equals(venue)){
-                    ids.add(matchId);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public void getPartnership(String year, String venue){
-         addId(year, venue);
+         ids = StoredId.getIds(year, venue);
 
 
          try (BufferedReader br = new BufferedReader(new FileReader(deliveryPath))) {   
@@ -87,7 +57,7 @@ class Partnership{
                         else
                         c2 = true;
 
-                        partner.add(new Pair2(runs,batsman1 + " and " + batsman2 + " scored:- "));
+                        partner.add(new Pair(runs,batsman1 + " and " + batsman2 + " scored:- "));
                         runs = 0;
                     }
                     else{
@@ -109,11 +79,11 @@ class Partnership{
                     }
                    }
                    else{
-                          int v = partner.peek().priority;
-                          String name = partner.peek().value;
+                          int v = partner.peek().getPriority();
+                          String name = partner.peek().getValue();
                         //   System.out.print(v + " "+ name);
                           partner.clear();
-                          highPartner.add(new Pair2(v,name));
+                          highPartner.add(new Pair(v,name));
 
                           batsman1 = curr_batsman1;
                           batsman2 = curr_batsman2;
@@ -127,19 +97,18 @@ class Partnership{
 
             }
             //highest parternship in a year and in a venue:-
-            System.out.println(highPartner.peek().value + " " + highPartner.peek().priority);
+            System.out.println("Highest Partenrnship in year " + year + " by:- ");
+            System.out.println(highPartner.peek().getValue() + " " + highPartner.peek().getPriority());
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-}
-
-public class HighestParternship {
-
     public static void main(String[] args) {
-         Partnership p = new Partnership();
-        p.getPartnership("2015","Bangalore");
-    }   
+        getPartnership("2016","Bangalore");
+    }
+
 }
+
+ 

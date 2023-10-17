@@ -34,8 +34,9 @@ public class TopEconomicalBowlers {
         } 
         return s1;
     }
-    public static void main(String[] args) {
-        String deliveriesPath = "data/deliveries.csv";
+
+    public static void getTopEconomicalBowler(){
+           String deliveriesPath = "data/deliveries.csv";
 
          Set<String> s2 = matchYear();
 
@@ -109,4 +110,5 @@ public class TopEconomicalBowlers {
         }
 
     }
+   
 }

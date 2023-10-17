@@ -6,8 +6,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class NoOfMatchesWon {
-    public static void main(String[] args) {
-         String csvFilePath = "data/matches.csv";
+     
+    public static void getMatchesWon(){
+          String csvFilePath = "data/matches.csv";
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             br.readLine();
@@ -36,4 +37,5 @@ public class NoOfMatchesWon {
             e.printStackTrace();
         }
     }
+
 }

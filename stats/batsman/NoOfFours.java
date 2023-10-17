@@ -8,8 +8,9 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class NoOfFours {
-    public static void main(String[] args) {
-        String csvFilePath = "data/deliveries.csv";
+
+    public static void getMostFours(){
+          String csvFilePath = "data/deliveries.csv";
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
            
@@ -45,5 +46,6 @@ public class NoOfFours {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }   
+    }
+   
 }

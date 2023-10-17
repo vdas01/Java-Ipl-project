@@ -8,7 +8,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class MostDucks {
-    public static void main(String[] args) {
+
+    public static void getMostDucks(){
          String csvFilePath = "data/deliveries.csv";
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
@@ -48,4 +49,5 @@ public class MostDucks {
             e.printStackTrace();
         }
     }
+  
 }
