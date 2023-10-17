@@ -9,19 +9,29 @@
    match upto 2016. <br>
 - I have used the coding standard and all oops methods to design my project structure. <br>
 
- ## Project structure;-
- - data :- contains two csv files <br>
-              - matches.csv <br>
-              - deliveries.csv <br>
- - menu :- entry point <br>
-              - Main.java :- Main/Entry file <br>
-              - Batsman.java :- for calling batsman stats <br>
-              - Bowler.java  :- for calling bowler stats <br>
-              - Fielder.java :- for calling fielder/team stats <br>
- - stats :- all stats related classes <br>
-              - batsman :- all batsmans stats related classes <br>
-              - bowling :- all bowlers stats related classes <br>
-              - team    :- all team/fielders stats related classes <br>
+ ## Project structure:-
 
+ 
+ ### ipl-project1
+
+* [data/](./ipl-project1/data)
+  * [.~lock.deliveries.csv#](./ipl-project1/data/.~lock.deliveries.csv#)
+  * [.~lock.matches.csv#](./ipl-project1/data/.~lock.matches.csv#)
+  * [deliveries.csv](./ipl-project1/data/deliveries.csv)
+  * [matches.csv](./ipl-project1/data/matches.csv)
+* [menu/](./ipl-project1/menu)
+  * [Batsman.java](./ipl-project1/menu/Batsman.java)
+  * [Bowler.java](./ipl-project1/menu/Bowler.java)
+  * [Fielder.java](./ipl-project1/menu/Fielder.java)
+  * [Main.java](./ipl-project1/menu/Main.java)
+* [stats/](./ipl-project1/stats)
+  * [batsman/](./ipl-project1/stats/batsman)
+  * [bowling/](./ipl-project1/stats/bowling)
+  * [team/](./ipl-project1/stats/team)
+* [utility_classes/](./ipl-project1/utility_classes)
+  * [Pair.java](./ipl-project1/utility_classes/Pair.java)
+  * [Pair2.java](./ipl-project1/utility_classes/Pair2.java)
+  * [StoredId.java](./ipl-project1/utility_classes/StoredId.java)
+* [README.md](./ipl-project1/README.md)
 
 **If you have any suggestion regarding my project email:- vdas53073@gmail.com.**
