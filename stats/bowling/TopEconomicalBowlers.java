@@ -12,7 +12,7 @@ import java.util.TreeSet;
 
 public class TopEconomicalBowlers {
 
-     public static Set<String> matchYear() {
+     private static Set<String> matchYear() {
           String matchPath = "data/matches.csv";
           Set<String> s1 = new TreeSet<String>();
 

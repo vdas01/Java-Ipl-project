@@ -11,7 +11,7 @@ import java.util.TreeSet;
 
 public class ExtraRunConcededPerTeam {
     //matchid, year
-    public static Set<String> matchYear() {
+    private static Set<String> matchYear() {
           String matchPath = "data/matches.csv";
           Set<String> s1 = new TreeSet<String>();
 
@@ -69,6 +69,9 @@ public class ExtraRunConcededPerTeam {
         } catch (IOException e){
             e.printStackTrace();
         }
+    }
+    public static void main(String[] args) {
+        getExtraRunsConceded();
     }
 
 }

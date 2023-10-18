@@ -17,7 +17,7 @@ import utility_classes.StoredId;
 
 public class FindPlayerMostSixes {
 
-    public static  Map<String,Integer> getBatsmans(Set<String>ids){
+    private static  Map<String,Integer> getBatsmans(Set<String>ids){
 
         String deliveryPath = "data/deliveries.csv";
            Map<String,Integer> batsmanRuns = new TreeMap<>();

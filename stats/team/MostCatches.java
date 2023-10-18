@@ -16,7 +16,7 @@ import utility_classes.Pair;
 public class MostCatches {
    static Map<String,Integer> mostCatchPlayers = new HashMap<>();
 
-    public static void getMostCatchesPlayers(String year){
+    private static void getMostCatchesPlayers(String year){
         String deliveryPath = "data/deliveries.csv";
           Set<String> ids = StoredId.getIds(year);
            

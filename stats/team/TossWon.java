@@ -21,7 +21,7 @@ public class TossWon{
      private static PriorityQueue<Pair2> winPerctange_ = new PriorityQueue<>(Collections.reverseOrder());
       private static String matchPath_ = "data/matches.csv";
 
-    public  static void  getWinPercentage(){
+    private  static void  getWinPercentage(){
          for (Map.Entry<String, Integer> entry : tossWin_.entrySet()) {
                 //no of toss/ no of matches * 100;
                 int noOfToss = entry.getValue();

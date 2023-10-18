@@ -41,6 +41,7 @@ public class Fielder {
                 System.out.println("Enter year");
                 year = sc.next();
                 TossWon.getTossWin(year);
+                break;
             default:
                  System.out.println("Wrong choice. Enter between 1-4");
         }

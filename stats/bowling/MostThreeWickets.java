@@ -23,7 +23,7 @@ public class MostThreeWickets{
    private static Set<String> matchIds_;
 
 
-    public static void getMostThreeWickets() {
+    private static void getMostThreeWickets() {
        
         PriorityQueue<Pair>  mostThreeWickets = new PriorityQueue<>(Collections.reverseOrder());
          for (Map.Entry<String, Integer> entry : threeWickets_.entrySet()){

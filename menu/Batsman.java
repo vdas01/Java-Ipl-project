@@ -44,7 +44,11 @@ public class Batsman {
            NoOfFours.getMostFours();
         break;
         case 5:
-        // StrikeRate;
+         System.out.println("Enter year and venue");
+           year = scanner.next();
+           scanner.nextLine();
+           venue = scanner.next();
+        StrikeRate.mostStrikeRate(year, venue);;
         break;
         default:
         System.out.println("Wrong choice. Choose between 1-5");
@@ -52,7 +56,5 @@ public class Batsman {
            
        }
    }
-    public static void main(String[] args) {
-        
-    }
+   
 }
