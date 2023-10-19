@@ -2,14 +2,12 @@ package bowling;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Set;
 
-
+import utility_classes.Pair2;
 import utility_classes.StoredId;
 
 public class TopEconomicalBowlers {
@@ -41,11 +39,11 @@ public class TopEconomicalBowlers {
                 String[] columns = line.split(",");
 
                 String bowler = columns[8];
-                // int extraRuns = Integer.parseInt(columns[16]);
+                int extraRuns = Integer.parseInt(columns[16]);
                 int curr_run = Integer.parseInt(columns[17]);
                 String id = columns[0];
 
-                if(s2.contains(id)){
+                if(s2.contains(id) && extraRuns == 0){
                     int prev_runs = 0;
                     if(runs.containsKey(bowler)){
 
@@ -76,15 +74,21 @@ public class TopEconomicalBowlers {
             }
 
 
-            //Sort accoridng to values or economy:-
-            List<Map.Entry<String, Float>> entryList = new ArrayList<>(economical.entrySet());
+           
 
-        // Sort the list based on values (in ascending order)
-        entryList.sort(Comparator.comparing(Map.Entry::getValue));
+            PriorityQueue<Pair2> sortedEconomy = new PriorityQueue<>();
 
-        for (Map.Entry<String, Float> entry : entryList) {
-           System.out.println(entry.getKey() + " " + entry.getValue());
-        }
+           for(Map.Entry<String,Float> entry : economical.entrySet()){
+               sortedEconomy.add(new Pair2(entry.getValue(),entry.getKey()));
+           }
+
+           
+           System.out.println("Most Economical Bowler:- ");
+          System.out.println(sortedEconomy.peek().getValue() + ", Economy :- " +sortedEconomy.peek().getPriority());
+
+        //    for(Pair2 elem : sortedEconomy){
+        //       System.out.println("Bowler :- " + elem.getValue() + ", " + "Economy :- " + elem.getPriority());
+        //    }
             
            
         } catch (IOException e) {
