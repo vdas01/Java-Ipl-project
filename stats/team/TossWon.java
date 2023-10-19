@@ -68,9 +68,7 @@ public class TossWon{
         }
     }
 
-public static void main(String[] args) {
-    getTossWin("2016");
-}
+
     
 }
 

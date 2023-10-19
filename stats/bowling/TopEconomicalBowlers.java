@@ -8,37 +8,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
+
+
+import utility_classes.StoredId;
 
 public class TopEconomicalBowlers {
-
-     private static Set<String> matchYear() {
-          String matchPath = "data/matches.csv";
-          Set<String> s1 = new TreeSet<String>();
-
-             try (BufferedReader br = new BufferedReader(new FileReader(matchPath))) {
-            
-            br.readLine();
-            String line;
-            while ((line = br.readLine()) != null){
-                String[] columns = line.split(",");
-                // System.out.print(columns[1] + " ");
-               if(columns[1].equals("2015")){
-                   s1.add(columns[0]);
-               }
-            }
-         
-           
-        } catch (IOException e) {
-            e.printStackTrace();
-        } 
-        return s1;
-    }
 
     public static void getTopEconomicalBowler(){
            String deliveriesPath = "data/deliveries.csv";
 
-         Set<String> s2 = matchYear();
+         Set<String> s2 =StoredId.getIds("2015");
 
         try (BufferedReader br = new BufferedReader(new FileReader(deliveriesPath))){
             // Assuming the first line contains headers, if not, skip this line
@@ -62,6 +41,7 @@ public class TopEconomicalBowlers {
                 String[] columns = line.split(",");
 
                 String bowler = columns[8];
+                // int extraRuns = Integer.parseInt(columns[16]);
                 int curr_run = Integer.parseInt(columns[17]);
                 String id = columns[0];
 
@@ -75,12 +55,14 @@ public class TopEconomicalBowlers {
 
                     runs.put(bowler,prev_runs + curr_run);
 
+              
                     int prev_balls = 0;
                     if(balls.containsKey(bowler)){
                        prev_balls = balls.get(bowler);
                     }
                     balls.put(bowler,prev_balls + 1);
-                }
+
+              }
 
             }
             for(Map.Entry<String,Integer> temp: balls.entrySet()){
@@ -110,5 +92,6 @@ public class TopEconomicalBowlers {
         }
 
     }
+
    
 }

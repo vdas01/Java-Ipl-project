@@ -105,10 +105,7 @@ public class HighestParternship{
 
     }
 
-    public static void main(String[] args) {
-        getPartnership("2016","Bangalore");
-    }
-
+ 
 }
 
  

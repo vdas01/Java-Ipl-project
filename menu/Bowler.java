@@ -1,9 +1,6 @@
 package menu;
 
 import java.util.Scanner;
-
-import javax.sound.midi.SysexMessage;
-
 import bowling.MostThreeWickets;
 import bowling.TopEconomicalBowlers;
 

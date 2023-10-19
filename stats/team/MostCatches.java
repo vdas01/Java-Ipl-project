@@ -59,7 +59,5 @@ public class MostCatches {
         System.out.println(mostCatchPlayer.peek().getValue() + ", Catches:- " + mostCatchPlayer.peek().getPriority());
 
     }
-    public static void main(String[] args) {
-        getMostCatchesPlayer("2016");
-    }
+ 
 }

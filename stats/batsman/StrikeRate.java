@@ -3,7 +3,6 @@ package batsman;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -107,8 +106,5 @@ public class StrikeRate{
 
     }
 
-    public static void main(String[] args) {
-      
-       mostStrikeRate("2016", "Bangalore");
-    }
+ 
 }

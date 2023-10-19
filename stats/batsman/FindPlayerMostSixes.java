@@ -65,7 +65,5 @@ public class FindPlayerMostSixes {
     }
 
 
-    public static void main(String[] args) {
-        mostSixBatsman("2015", "Bangalore");
-    }
+ 
 }
