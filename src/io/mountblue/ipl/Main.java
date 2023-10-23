@@ -5,6 +5,8 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
+    public static final String MATCH_FILE_PATH = "data/matches.csv";
+    public static final String DELIVERIES_FILE_PATH = "data/deliveries.csv";
     public static final int MATCH_ID = 0;
     public static final int MATCH_SEASON = 1;
     public static final int MATCH_WINNER = 10;
@@ -123,7 +125,7 @@ public class Main {
         List<Match> matches = new ArrayList<>();
 
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("data/matches.csv"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(MATCH_FILE_PATH))) {
             reader.readLine();
 
             while (reader.ready()) {
@@ -153,7 +155,7 @@ public class Main {
     private static List<Delivery> getDeliveriesData() {
         List<Delivery> deliveries = new ArrayList<>();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("data/deliveries.csv"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(DELIVERIES_FILE_PATH))) {
             reader.readLine();
             while (reader.ready()) {
                 String line = reader.readLine();
@@ -211,6 +213,8 @@ public class Main {
         System.out.println("Total no of matches won by teams in a year:- ");
 
         for (Map.Entry<String, Integer> elem : totalNoOfMatchesWonByTeams.entrySet()) {
+            if(elem.getKey().isEmpty())
+                continue;
             System.out.println("Team:- " + elem.getKey() + ", No of matches won:- " + elem.getValue());
         }
 
