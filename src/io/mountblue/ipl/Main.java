@@ -114,12 +114,7 @@ public class Main {
 
             stay = sc.nextInt();
         }
-//     noOfMatchesTeamsPlayedPerYear(matches);
-//     totalMatchesWonByTeams(matches);
-//     extraRunsConcededPerTeam(matches,deliveries,"2016");
-//        mostEconomicalBowlerInAYear("2015",matches,deliveries);
-//        mostSixBatsmanByYearAndVenue("2016","Eden Gardens",matches,deliveries);
-//        mostMaidenOverByBowlerInAYear("2016",matches,deliveries);
+
 
 
     }
@@ -340,15 +335,20 @@ public class Main {
                                                      List<Delivery> deliveries) {
         Set<String> matchYearId = getMatchYearId(matches, year, venue);
         Map<String, Integer> batsmanScoredSix = getBatsmansScoredSix(matchYearId, deliveries);
-        Map<Integer, String> mostSixBatsman = new TreeMap<>(Collections.reverseOrder());
 
-        for (Map.Entry<String, Integer> batsman : batsmanScoredSix.entrySet()) {
-            mostSixBatsman.put(batsman.getValue(), batsman.getKey());
+
+        List<Map.Entry<String, Integer>> batsmanScoredSixSortedList = new ArrayList<>(batsmanScoredSix.entrySet());
+        batsmanScoredSixSortedList.sort(Map.Entry.comparingByValue(Collections.reverseOrder()));
+        Map<String, Integer> batsmanScoredSixSorted = new LinkedHashMap<>();
+
+        for (Map.Entry<String, Integer>batsman : batsmanScoredSixSortedList) {
+            batsmanScoredSixSorted.put(batsman.getKey(), batsman.getValue());
         }
 
         System.out.println("Most sixes by a batsman in year " + year + " at " + venue + " :- ");
-        for (Map.Entry<Integer, String> batsman : mostSixBatsman.entrySet()) {
-            System.out.println("Batsman:- " + batsman.getValue() + ", Sixes:- " + batsman.getKey());
+        for (Map.Entry<String, Integer> batsman : batsmanScoredSixSorted.entrySet()) {
+            System.out.println("Batsman:- " + batsman.getKey() + ", Sixes:- " + batsman.getValue());
+            break;
         }
     }
 
@@ -398,7 +398,9 @@ public class Main {
         for (Map.Entry<String, Integer> sortedBowler : sortedMaidenBowler.entrySet()) {
             System.out.println("Bowler:- " + sortedBowler.getKey() + ", Maiden Overs:- " +
                     sortedBowler.getValue());
+            break;
         }
+
     }
 
 
