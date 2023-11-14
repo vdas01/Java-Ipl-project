@@ -3,24 +3,25 @@ package io.mountblue.ipl;
 public class Delivery {
 
     private String extraRuns;
-
     private String bowlingTeam;
-
+    private String battingTeam;
     private String id;
-
     private String bowler;
     private String batsman;
-
     private String totalRuns;
-
     private String batsmanRuns;
-
     private String nonStriker;
-
     private String playerDismissed ;
-
     private String dismissalKind;
     private String over;
+
+    public String getBattingTeam() {
+        return battingTeam;
+    }
+
+    public void setBattingTeam(String battingTeam) {
+        this.battingTeam = battingTeam;
+    }
 
     public String getDismissalKind() {
         return dismissalKind;
